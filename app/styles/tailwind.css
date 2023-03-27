@@ -1010,6 +1010,10 @@ video {
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
+.view-loader{
+  margin: auto;
+}
+
 @media (min-width: 640px) {
   .sm\:mx-auto {
     margin-left: auto;
