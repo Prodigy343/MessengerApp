@@ -6,11 +6,13 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useNavigation
 } from '@remix-run/react'
 
 import { getUser } from './session.server'
 import tailwindStylesheetUrl from './styles/tailwind.css'
+import { RingLoader } from 'react-spinners'
 
 export const links: LinksFunction = () => {
   return [
@@ -43,16 +45,18 @@ export async function loader ({ request }: LoaderArgs) {
 }
 
 export default function App () {
+  const { state } = useNavigation()
+
   return (
-    <html lang="en" className="h-full">
+    <html lang='en' className='h-full'>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width,initial-scale=1' />
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
-        <Outlet />
+      <body className='h-full'>
+        {state !== 'idle' ? <RingLoader className='view-loader' /> : <Outlet />}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
