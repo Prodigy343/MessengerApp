@@ -21,9 +21,5 @@ module.exports = {
   },
   globals: {
     FormDataEntryValue: 'readonly'
-  },
-  rules: {
-    'no-console': 'off',
-    'jsx-quotes': [2, 'prefer-single']
   }
 }

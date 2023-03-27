@@ -56,6 +56,7 @@ function getClient () {
   })
   // connect eagerly
   client.$connect()
+
   return client
 }
 
