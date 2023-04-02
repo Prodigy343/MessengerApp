@@ -1,6 +1,6 @@
 import type { Password, User } from '@prisma/client'
 import bcrypt from 'bcryptjs'
-import testImg from '~/avatar.png'
+import testImg from 'app/avatar.png'
 
 import { prisma } from '~/db.server'
 
