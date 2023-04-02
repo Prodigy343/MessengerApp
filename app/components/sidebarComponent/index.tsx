@@ -1,5 +1,5 @@
 import type { LinksFunction } from '@remix-run/node'
-import type { User } from '~/types/user'
+import type { User } from '~/typings/user'
 import componentStylesheetUrl from './styles.css'
 import { OnlineUserComponent } from '../onlineUserComponent'
 

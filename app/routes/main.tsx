@@ -1,5 +1,5 @@
 import type { LinksFunction, LoaderArgs } from '@remix-run/node'
-import type { SerializeUserData } from '~/types/user'
+import type { SerializeUserData } from '~/typings/user'
 import { json } from '@remix-run/node'
 import { Form, Link, Outlet, useLoaderData } from '@remix-run/react'
 import { SidebarComponent, links as sidebarStyles } from '~/components/sidebarComponent'
