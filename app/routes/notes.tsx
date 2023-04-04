@@ -42,24 +42,24 @@ export default function NotesPage () {
 
           {data.noteListItems.length === 0
             ? (
-            <p className='p-4'>No notes yet</p>
-              )
+              <p className='p-4'>No notes yet</p>
+            )
             : (
-            <ol>
-              {data.noteListItems.map((note) => (
-                <li key={note.id}>
-                  <NavLink
-                    className={({ isActive }) =>
-                      `block border-b p-4 text-xl ${isActive ? 'bg-white' : ''}`
-                    }
-                    to={note.id}
-                  >
+              <ol>
+                {data.noteListItems.map((note) => (
+                  <li key={note.id}>
+                    <NavLink
+                      className={({ isActive }) =>
+                        `block border-b p-4 text-xl ${isActive ? 'bg-white' : ''}`
+                      }
+                      to={note.id}
+                    >
                     📝 {note.title}
-                  </NavLink>
-                </li>
-              ))}
-            </ol>
-              )}
+                    </NavLink>
+                  </li>
+                ))}
+              </ol>
+            )}
         </div>
 
         <div className='flex-1 p-6'>

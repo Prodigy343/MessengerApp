@@ -9,12 +9,14 @@ import {
 import invariant from 'tiny-invariant'
 
 import { deleteNote, getNote } from '~/models/note.server'
+import { getOnlineUsers } from '~/models/user.server'
 import { requireUserId } from '~/session.server'
 
 export async function loader ({ request, params }: LoaderArgs) {
   const userId = await requireUserId(request)
   invariant(params.noteId, 'noteId not found')
 
+  console.log(await getOnlineUsers())
   const note = await getNote({ userId, id: params.noteId })
   if (!note) {
     throw new Response('Not Found', { status: 404 })

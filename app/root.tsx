@@ -12,12 +12,16 @@ import {
 
 import { getUser } from './session.server'
 import tailwindStylesheetUrl from './styles/tailwind.css'
+import globalStylesheetUrl from './styles/global.css'
 import { RingLoader } from 'react-spinners'
 
 export const links: LinksFunction = () => {
   return [
     {
       rel: 'stylesheet', href: tailwindStylesheetUrl
+    },
+    {
+      rel: 'stylesheet', href: globalStylesheetUrl
     },
     {
       rel: 'stylesheet',
@@ -34,6 +38,10 @@ export const links: LinksFunction = () => {
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'
     }
   ]
 }
@@ -55,7 +63,7 @@ export default function App () {
         <Meta />
         <Links />
       </head>
-      <body className='h-full'>
+      <body className='flex w-full h-full'>
         {state !== 'idle' ? <RingLoader className='view-loader' /> : <Outlet />}
         <ScrollRestoration />
         <Scripts />

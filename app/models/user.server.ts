@@ -1,9 +1,31 @@
 import type { Password, User } from '@prisma/client'
 import bcrypt from 'bcryptjs'
-
+import testImg from '~/avatar.png'
 import { prisma } from '~/db.server'
 
 export type { User } from '@prisma/client'
+
+export async function getOnlineUsers () {
+  return {
+    onlineUsers: [
+      {
+        id: 'asdv1',
+        name: 'Online User 1',
+        avatar: testImg
+      },
+      {
+        id: 'asdv2',
+        name: 'Online User 2',
+        avatar: testImg
+      },
+      {
+        id: 'asdv3',
+        name: 'Online User 3',
+        avatar: testImg
+      }
+    ]
+  }
+}
 
 export async function getUserById (id: User['id']) {
   return prisma.user.findUnique({ where: { id } })

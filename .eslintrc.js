@@ -24,6 +24,7 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
-    'jsx-quotes': [2, 'prefer-single']
+    'jsx-quotes': [2, 'prefer-single'],
+    indent: ['error', 2]
   }
 }
