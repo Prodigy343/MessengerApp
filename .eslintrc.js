@@ -7,9 +7,6 @@ module.exports = {
     'prettier',
     'standard'
   ],
-  compilerOptions: {
-    lib: ['dom', 'es6']
-  },
   env: {
     'cypress/globals': true
   },

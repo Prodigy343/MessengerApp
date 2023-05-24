@@ -23,7 +23,6 @@ interface Modifiers {
 }
 
 export const WysiwygComponent = ({ className }: { className: string }) => {
-
   const placeholder = 'Write your message here'
   const chatBox = useRef<HTMLDivElement>(null)
   const [activeModifiers, setActiveModifiers] = useState<Modifiers>({
@@ -35,7 +34,7 @@ export const WysiwygComponent = ({ className }: { className: string }) => {
   })
 
   const handleModifiersClick = (modifier: keyof Modifiers) => {
-    document.execCommand(modifier, false);
+    document.execCommand(modifier, false)
     if (chatBox && chatBox.current) chatBox.current.focus()
     setActiveModifiers({
       ...activeModifiers,
@@ -44,7 +43,8 @@ export const WysiwygComponent = ({ className }: { className: string }) => {
   }
 
   const sendMessage = () => {
-    console.log(chatBox.current?.innerHTML)
+    const message = chatBox.current?.innerHTML
+    console.log(message)
   }
 
   return (
