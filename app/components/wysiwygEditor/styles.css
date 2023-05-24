@@ -1,0 +1,75 @@
+.wysiwyg-container {
+  border-radius: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.editor-box {
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  resize: none;
+  overflow: hidden;
+}
+
+hr {
+  background: rgba(128, 128, 128, 0.5);
+  margin: 0;
+}
+
+.bottom-options {
+  padding: 6.5px 5px;
+}
+
+.bottom-options .option {
+  background: rgba(65, 65, 65, 0);
+  color: black;
+  padding: 3px 9px;
+  margin: 0 3px;
+  border: none;
+  transition: all 0.095s ease;
+  border-radius: 8px;
+}
+
+.bottom-options .option:hover,
+.bottom-options .option.active {
+  background: rgba(65, 65, 65, 0.105);
+}
+
+.bottom-options .send-btn {
+  border: none;
+  color: black;
+  margin: 0;
+}
+
+.bottom-options .send-btn:hover {
+  filter: brightness(1.1);
+}
+
+.send-container {}
+
+.wysiwyg-container .wrapper {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.wysiwyg-container .editor-box {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  display: block;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+.wysiwyg-container .editor-box * {
+  display: inline;
+  word-wrap: break-word;
+}
+
+.wysiwyg-container .editor-box::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}

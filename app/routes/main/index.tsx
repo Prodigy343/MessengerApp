@@ -2,7 +2,7 @@ import type { LinksFunction, LoaderArgs } from '@remix-run/node'
 import type { SerializeUserData } from '~/typings/user'
 import { json } from '@remix-run/node'
 import { Form, Link, Outlet, useLoaderData } from '@remix-run/react'
-import { SidebarComponent, links as sidebarStyles } from '~/components/sidebarComponent'
+import { SidebarComponent, links as sidebarStyles } from '~/components/sidebar'
 import { getOnlineUsers } from '~/models/user.server'
 
 export const links: LinksFunction = () => [...sidebarStyles()]
@@ -31,7 +31,7 @@ export default function MainPage () {
         </Form>
       </header>
 
-      <main className='flex w-full h-full bg-white'>
+      <main className='flex w-full h-full bg-white p-0'>
         <SidebarComponent onlineUsers={data.users.onlineUsers}/>
         <div className='flex-1 p-6'>
           <Outlet />
